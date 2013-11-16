@@ -1,0 +1,27 @@
+{
+  "name": "refinerycms-tinymce",
+  "description": "RefineryCMS tinymce module",
+  "version": "0.0.1",
+  "homepage": "https://github.com/keram/refinerycms-tinymce",
+  "bugs": "https://github.com/keram/refinerycms-tinymce/issues",
+  "author": {
+    "name": "Marek L.",
+    "email": "nospam.keram@gmail.com",
+    "url": "http://refinery.sk/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/keram/refinerycms-tinymce.git"
+  },
+  "licenses": [{
+    "type": "MIT",
+    "url": "http://opensource.org/licenses/mit-license.php/"
+  }],
+  "readme": "",
+  "readmeFilename": "README.md",
+  "dependencies": {
+    "jquery": "~1.10.2",
+    "tinymce": "~4.0.5",
+    "i18n": "~0.0.1"
+  }
+}
