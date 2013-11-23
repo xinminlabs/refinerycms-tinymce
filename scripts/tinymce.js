@@ -49,7 +49,7 @@
                                 'text': t('refinery.tinymce.image'),
                                 'icon': false,
                                 'onclick': function () {
-                                    editor.refinery_images_dialog.init().open()
+                                    editor.refinery_images_dialog.init().open();
                                 }
                             });
                         });
@@ -148,7 +148,7 @@
                 }
             );
 
-            that.on('destroy', function () { dialog.destroy() } );
+            that.on('destroy', function () { dialog.destroy(); } );
 
             dialog.init().open();
         },
@@ -163,20 +163,22 @@
         },
 
         unload_editor: function () {
-            var editor = this.editor;
-
             this.update_textarea();
             this.holder.removeClass('wysiwyg-editor-on');
             this.holder.find('.mce-tinymce').hide();
             this.holder.find('textarea').show();
-
-            this.images_dialog.destroy();
-            this.links_dialog.destroy();
-
         },
 
         update_textarea: function () {
-            tinymce.triggerSave();
+            /*
+            NS_ERROR_UNEXPECTED: Unexpected error
+            },
+             */
+            try {
+                tinymce.triggerSave();
+            } catch (e) {
+                refinery.log(e);
+            }
         },
 
         destroy: function () {
@@ -184,6 +186,9 @@
                 this.unload_editor();
                 this.toggle_button.remove();
                 tinymce.remove();
+
+                this.images_dialog.destroy();
+                this.links_dialog.destroy();
                 this.holder.closest('form').off('before-submit', this.update_textarea);
             }
 
@@ -211,8 +216,8 @@
              * @return {undefined}
              */
             options.setup = function (editor) {
-                that.bind_images_dialog(editor, that.images_dialog)
-                that.bind_links_dialog(editor, that.links_dialog)
+                that.bind_images_dialog(editor, that.images_dialog);
+                that.bind_links_dialog(editor, that.links_dialog);
 
                 editor.on('init', function () {
                     holder.addClass('wysiwyg-editor-on');
@@ -316,8 +321,8 @@
                     $(this), [
                     refinery('admin.ImagesDialog'),
                     refinery('admin.LinksDialog'),
-                    image_dialog_factory]
-                )
+                    image_dialog_factory
+                ])
             );
         });
     };
