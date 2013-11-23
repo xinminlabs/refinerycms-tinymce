@@ -1,6 +1,6 @@
-refinery.admin.ImagesDialog.prototype.options.url = '/components/refinerycms-clientside/test/fixtures/images_dialog.json'
-refinery.admin.ResourcesDialog.prototype.options.url = '/components/refinerycms-clientside/test/fixtures/resources_dialog.json'
-refinery.admin.LinksDialog.prototype.options.url = '/components/refinerycms-clientside/test/fixtures/links_dialog.json'
+refinery.admin.ImagesDialog.prototype.options.url_path = '/../components/refinerycms-clientside/test/fixtures/images_dialog.json'
+refinery.admin.ResourcesDialog.prototype.options.url_path = '/../components/refinerycms-clientside/test/fixtures/resources_dialog.json'
+refinery.admin.LinksDialog.prototype.options.url_path = '/../components/refinerycms-clientside/test/fixtures/links_dialog.json'
 
 clickBtn = (name) ->
   btn = $('button').filter ->

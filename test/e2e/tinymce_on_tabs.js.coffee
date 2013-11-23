@@ -22,8 +22,8 @@ describe 'Refinery Tinymce on Tabs', ->
     )
 
   after ->
-    # @ui.destroy()
-    # @container.empty()
+    @ui.destroy()
+    @container.empty()
 
   it 'has 3 tinymce editors', ->
     expect( $('.mce-tinymce.mce-container.mce-panel').length ).to.equal( 3 )

@@ -24,7 +24,10 @@
         return ui.init(container);
       });
     });
-    after(function() {});
+    after(function() {
+      this.ui.destroy();
+      return this.container.empty();
+    });
     it('has 3 tinymce editors', function() {
       return expect($('.mce-tinymce.mce-container.mce-panel').length).to.equal(3);
     });
