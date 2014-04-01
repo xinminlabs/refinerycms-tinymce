@@ -14,5 +14,5 @@ Gem::Specification.new do |s|
   s.files             = `git ls-files -- lib/*`.split("\n")
   s.require_paths     = %w(lib)
 
-  s.add_dependency 'refinerycms-core', '~> 2.718.0.dev'
+  s.add_dependency 'refinerycms-core'
 end
