@@ -7,3 +7,4 @@ src
 .sass-cache
 components/*
 tools/*
+*.iml

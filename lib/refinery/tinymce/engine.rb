@@ -9,16 +9,16 @@ module Refinery
         Refinery::Core.wysiwyg_editor = self
       end
 
-      initializer 'register refinery_tinymce javascripts' do
+      initializer 'register tinymce javascripts' do
         ::Refinery::I18n.locales.each do |locale|
-          file_path = "#{config.root}/lib/assets/javascripts/refinery/i18n/tinymce/tinymce-#{locale}.js"
+          file_path = "#{config.root}/vendor/assets/javascripts/refinery/i18n/tinymce/tinymce-#{locale[0]}.js"
           if File.exists?(file_path)
-            Refinery::Core.config.register_admin_I18n_javascript locale, "refinery/i18n/tinymce/tinymce-#{locale}.js"
+            Refinery::Core.config.register_admin_I18n_javascript locale[0], "refinery/i18n/tinymce/tinymce-#{locale[0]}.js"
           end
         end
 
         Refinery::Core.config.register_admin_javascript(%w(
-          refinery/tinymce/tinymce.min.js
+          refinery/tinymce/tinymce.all.js
         ))
       end
 

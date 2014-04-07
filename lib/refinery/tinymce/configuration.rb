@@ -33,7 +33,7 @@ module Refinery
     self.language = :en
     self.nowrap = false
     self.object_resizing = true
-    self.plugins = %w(refinery_links refinery_images code table lists charmap autolink hr anchor pagebreak fullscreen)
+    self.plugins = %w(refinery_images code table lists charmap autolink hr anchor pagebreak fullscreen)
     self.skin = 'lightgray'
     self.theme = 'modern'
 
