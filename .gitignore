@@ -1,7 +1,6 @@
 node_modules
 docs
 dist
-app
 src
 .tmp
 .sass-cache

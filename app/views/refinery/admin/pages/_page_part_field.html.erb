@@ -1,0 +1,12 @@
+<div class="page-part" id="<%= part.to_param %>">
+    <% if part.title == :title %>
+        <br>
+        <%= ff.text_field :body, :class => 'larger widest',
+                          placeholder: 'Leave empty and will be used title above.' %>
+    <% else %>
+        <%= render '/refinery/admin/wysiwyg', f: ff, field: :body %>
+    <% end -%>
+
+    <%= ff.hidden_field :position, :class => 'part-position' %>
+    <%= ff.hidden_field :title if part.new_record? %>
+</div>
