@@ -1,3 +1,5 @@
+require "tinymce-rails"
+
 module Refinery
   autoload :TinymceGenerator, 'generators/refinery/tinymce_generator'
 
