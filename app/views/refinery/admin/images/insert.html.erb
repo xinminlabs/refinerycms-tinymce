@@ -48,7 +48,7 @@
             e.preventDefault();
             selected_images = $('#existing_image_area_content ul li.selected img');
             //selected_images = self.settings.multiple ? selected_images.get() : selected_images.get(0);
-            top.tinymce.activeEditor.insertContent("<img title='' src='"+selected_images.data($("#existing_image_size_area ul li.selected").children().data("size"))+'/>");
+            top.tinymce.activeEditor.insertContent("<img title='' src='"+selected_images.data($("#existing_image_size_area ul li.selected").children().data("size"))+"'/>");
             top.tinymce.activeEditor.nodeChanged();
             top.tinymce.activeEditor.windowManager.close();
         }
