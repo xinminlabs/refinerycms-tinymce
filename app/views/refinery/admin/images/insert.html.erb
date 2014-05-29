@@ -38,6 +38,8 @@
 <% content_for :javascripts do %>
   <script>
     $(document).ready(function(){
+        $("#wants_to_resize_image").parent().after('<p><input type="checkbox" id="fancybox" name="fancybox" value="1" checked=""><label for="fancybox" class="stripped" style="font-weight: bold;">Fancybox?</label></p>');
+
         var dialog = new ImageDialog({
             callback: function(img) {
                 alert(img);
@@ -48,7 +50,12 @@
             e.preventDefault();
             selected_images = $('#existing_image_area_content ul li.selected img');
             //selected_images = self.settings.multiple ? selected_images.get() : selected_images.get(0);
-            top.tinymce.activeEditor.insertContent("<img title='' src='"+selected_images.data($("#existing_image_size_area ul li.selected").children().data("size"))+"'/>");
+            if ($("#fancybox").is(':checked')) {
+              orig = selected_images.data("original");
+              top.tinymce.activeEditor.insertContent("<a class='fancybox' href='"+orig+"'><img title='' src='"+selected_images.data($("#existing_image_size_area ul li.selected").children().data("size") || "original")+"'/>");
+            } else {
+              top.tinymce.activeEditor.insertContent("<img title='' src='"+selected_images.data($("#existing_image_size_area ul li.selected").children().data("size") || "original")+"'/>");
+            }
             top.tinymce.activeEditor.nodeChanged();
             top.tinymce.activeEditor.windowManager.close();
         }
