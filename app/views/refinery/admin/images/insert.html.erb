@@ -52,7 +52,7 @@
             //selected_images = self.settings.multiple ? selected_images.get() : selected_images.get(0);
             if ($("#fancybox").is(':checked')) {
               orig = selected_images.data("original");
-              top.tinymce.activeEditor.insertContent("<a class='fancybox' href='"+orig+"'><img title='' src='"+selected_images.data($("#existing_image_size_area ul li.selected").children().data("size") || "original")+"'/>");
+              top.tinymce.activeEditor.insertContent("<a class='fancybox' rel='fancybox' href='"+orig+"'><img title='' src='"+selected_images.data($("#existing_image_size_area ul li.selected").children().data("size") || "original")+"'/>");
             } else {
               top.tinymce.activeEditor.insertContent("<img title='' src='"+selected_images.data($("#existing_image_size_area ul li.selected").children().data("size") || "original")+"'/>");
             }
